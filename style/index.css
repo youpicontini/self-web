@@ -1,0 +1,135 @@
+/*
+     __ ______  _   _____________   ______
+    / //_/ __ \/ | / /_  __/  _/ | / /  _/
+   / ,< / / / /  |/ / / /  / //  |/ // /
+  / /| / /_/ / /|  / / / _/ // /|  // /
+ /_/ |_\____/_/ |_/ /_/ /___/_/ |_/___/
+                                 paris
+ */
+
+
+@font-face {
+    font-family: inconsolata;
+    src: url(../font/Inconsolata.otf);
+}
+
+
+body{
+
+    margin: 0;
+    background: black;
+    font-family: 'Droid Sans Mono' ;
+    color: black;
+    font-size:12px;
+    /*background-image: url(../data/giphy.gif);*/
+
+}
+
+.draggable{
+
+    position: absolute;
+    -webkit-transform: translate(0px, 0px);
+    text-align: center;
+}
+
+.main {
+    width:400px;
+    left:50%;
+    margin-left: -215px;
+    top:50%;
+    height:150px;
+    margin-top: -88px;
+    padding:15px;
+    background-color: black;
+    color: #ffffff;
+    border: 1px dotted #ffffff;
+}
+
+
+.contact{
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: black;
+    left:50%;
+    margin-left: 5px;
+    top:5px;
+    font-size:10px;
+    padding:10px;
+    text-align: left;
+    box-shadow: 5px 5px 0px #ffffff;
+    border: 1px dotted #ffffff;
+}
+
+.contact_sup{
+    display: none;
+}
+
+.contact:hover{
+
+    box-shadow: 7px 7px 0px #ffffff;
+    -webkit-transform: translate(-2px, -2px);
+    -webkit-transition: 0.3s;-moz-transition: 0.3s;-ms-transition: 0.3s;-o-transition: 0.3s;transition: 0.3s;
+
+}
+
+
+.about{
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: black;
+    left:50%;
+    margin-left: -67px;
+    top:5px;
+    font-size:10px;
+    padding:10px;
+    text-align: right;
+    box-shadow: 5px 5px 0px #ffffff;
+    border: 1px dotted #ffffff;
+
+}
+
+.about_sup{
+    display: none;
+}
+
+.about:hover{
+
+    box-shadow: 7px 7px 0px #ffffff;
+    -webkit-transform: translate(-2px, -2px);
+    -webkit-transition: 0.3s;-moz-transition: 0.3s;-ms-transition: 0.3s;-o-transition: 0.3s;transition: 0.3s;
+}
+
+.draggable>p{
+    opacity: 1;
+}
+
+
+canvas{
+    position: absolute;
+    width: 600px;
+    left:50%;
+    margin-left: -300px;
+    top:50%;
+    margin-top: -300px;
+}
+
+.name{
+    font-size:20px;
+}
+
+.name span{
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.presentation{
+    margin-top: 40px;
+}
+
+.typed-cursor{
+    opacity: 0;
+}
