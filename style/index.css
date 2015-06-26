@@ -19,7 +19,6 @@ body{
     margin: 0;
     background: black;
     font-family: 'Droid Sans Mono' ;
-    color: black;
     font-size:12px;
     /*background-image: url(../data/giphy.gif);*/
 
@@ -40,65 +39,56 @@ body{
     height:150px;
     margin-top: -88px;
     padding:15px;
-    background-color: black;
-    color: #ffffff;
-    border: 1px dotted #ffffff;
+    color: white;
+    border: 1px dotted white;
+    box-shadow: 5px 5px 0px white;
 }
+/*CONTACT*/
 
-
-.contact{
+.contact, .works, .about{
     position: relative;
     display: inline-block;
-    color: #ffffff;
+    color: white;
     cursor: pointer;
-    background-color: black;
-    left:50%;
-    margin-left: 5px;
-    top:5px;
+    margin-left: 10px;
+    top:10px;
     font-size:10px;
     padding:10px;
     text-align: left;
-    box-shadow: 5px 5px 0px #ffffff;
-    border: 1px dotted #ffffff;
+    box-shadow: 5px 5px 0px white;
+    border: 1px dotted white;
+}
+
+.contact{
+    margin-left: 5px;
+}
+
+.works{
+    display: block;
+    margin-top: 10px;
+    width: 106px;
+}
+
+.works_sup{
+    display: none;
+    height: 100%;
+    width: 100%;
 }
 
 .contact_sup{
     display: none;
 }
 
-.contact:hover{
+.contact a:visited{color:inherit}
 
-    box-shadow: 7px 7px 0px #ffffff;
-    -webkit-transform: translate(-2px, -2px);
-    -webkit-transition: 0.3s;-moz-transition: 0.3s;-ms-transition: 0.3s;-o-transition: 0.3s;transition: 0.3s;
-
-}
-
-
-.about{
-    position: relative;
-    display: inline-block;
-    color: #ffffff;
-    cursor: pointer;
-    background-color: black;
-    left:50%;
-    margin-left: -67px;
-    top:5px;
-    font-size:10px;
-    padding:10px;
-    text-align: right;
-    box-shadow: 5px 5px 0px #ffffff;
-    border: 1px dotted #ffffff;
-
-}
 
 .about_sup{
     display: none;
 }
 
-.about:hover{
+.about:hover, .works:hover, .contact:hover{
 
-    box-shadow: 7px 7px 0px #ffffff;
+    box-shadow: 7px 7px 0px white;
     -webkit-transform: translate(-2px, -2px);
     -webkit-transition: 0.3s;-moz-transition: 0.3s;-ms-transition: 0.3s;-o-transition: 0.3s;transition: 0.3s;
 }
@@ -117,11 +107,22 @@ canvas{
     margin-top: -300px;
 }
 
-.name{
-    font-size:20px;
+.name_header{
+    display: none;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color:white;
 }
 
-.name span{
+.name, .name_header{
+    font-size:20px;
+}
+.name_header{
+    font-size:17px;
+}
+
+.name span, .name_header span{
     border-bottom: 2px solid white;
     padding-bottom: 5px;
 }

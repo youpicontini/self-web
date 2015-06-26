@@ -43,6 +43,9 @@ $( document ).ready(function() {
         }
         else{
             $(".contact_sup").show("slow");
+            if ($(".about_sup").is(':visible')){
+                $(".about_sup").hide("slow");
+            }
         }
     });
 
@@ -52,6 +55,27 @@ $( document ).ready(function() {
         }
         else{
             $(".about_sup").show("slow");
+            if ($(".contact_sup").is(':visible')){
+                $(".contact_sup").hide("slow");
+            }
+        }
+    });
+    $( ".works" ).click(function() {
+        if ($(".works_sup").is(':visible')){
+            $(".works").css({"width": "106px"});
+            $(".works_sup").hide("slow");
+            $(".name_header").fadeOut(500);
+            $(".name_header").hide("slow");
+            $(".main").show("slow");
+        }
+        else{
+            $(".works_sup").show("slow");
+            $(".name_header").show("slow");
+            $(".name_header").fadeIn(100000);
+            $(".main").hide("slow");
+            $(".works").css({"width": "auto"});
+            $(".works").css({"margin-right": "5px"});
+
         }
     });
 });
@@ -63,6 +87,20 @@ $(function(){
     // userText is the textbox
 
     $(".presentation").shuffleLetters();
+    var rand = Math.floor(Math.random()*2);
+    if(rand % 2 == 0){
+        $("body").css({"background" : "white"});
+        $(".main").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
+        $(".name span").css({"border-color" : "black"});
+        $(".name_header span").css({"border-color" : "black"});
+        $(".name_header").css({"color" : "black"});
+        $(".contact").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
+        $(".about").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
+        $(".works").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
+        $(".about").hover().css({"box-shadow": "7px 7px 0px black"});
+        $(".contact").hover().css({"box-shadow": "7px 7px 0px black"});
+        $(".works").hover().css({"box-shadow": "7px 7px 0px black"});
+    }
 
 });
 
