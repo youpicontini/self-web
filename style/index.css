@@ -20,6 +20,7 @@ body{
     background: black;
     font-family: 'Droid Sans Mono' ;
     font-size:12px;
+    padding: 10px;
     /*background-image: url(../data/giphy.gif);*/
 
 }
@@ -50,8 +51,6 @@ body{
     display: inline-block;
     color: white;
     cursor: pointer;
-    margin-left: 10px;
-    top:10px;
     font-size:10px;
     padding:10px;
     text-align: left;
@@ -59,6 +58,9 @@ body{
     border: 1px dotted white;
 }
 
+.contact, .about{
+    min-width: 55px;
+}
 .contact{
     margin-left: 5px;
 }
@@ -66,7 +68,7 @@ body{
 .works{
     display: block;
     margin-top: 10px;
-    width: 106px;
+    width: 145px;
 }
 
 .works_sup{
@@ -109,17 +111,26 @@ canvas{
 
 .name_header{
     display: none;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
     color:white;
 }
 
-.name, .name_header{
+.name{
     font-size:20px;
 }
 .name_header{
     font-size:17px;
+}
+
+.catch_phrase{
+    display: none;
+    margin-top: -6px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.bloc_catchphrase{
+    min-height: 36px;
+    display: none;
 }
 
 .name span, .name_header span{

@@ -37,6 +37,36 @@ interact('.draggable')
     });
 
 $( document ).ready(function() {
+    window.setInterval(function(){
+        var rand = Math.floor((Math.random() * 7) + 1);
+        switch(rand) {
+            case 1:
+                $(".catch_phrase").text("Robots lover");
+                break;
+            case 2:
+                $(".catch_phrase").text("Graphic aesthete");
+                break;
+            case 3:
+                $(".catch_phrase").text("Creative developer");
+                break;
+            case 4:
+                $(".catch_phrase").text("Light maker");
+                break;
+            case 5:
+                $(".catch_phrase").text("Generative addict");
+                break;
+            case 6:
+                $(".catch_phrase").text("Code eater");
+                break;
+            case 7:
+                $(".catch_phrase").text("Cool kid");
+                break;
+            default:
+                $(".catch_phrase").text("Cool kid");
+        }
+        $(".catch_phrase").shuffleLetters();
+    }, 2000); /*20 secs*/
+
     $( ".contact" ).click(function() {
         if ($(".contact_sup").is(':visible')){
             $(".contact_sup").hide("slow");
@@ -48,7 +78,6 @@ $( document ).ready(function() {
             }
         }
     });
-
     $( ".about" ).click(function() {
         if ($(".about_sup").is(':visible')){
             $(".about_sup").hide("slow");
@@ -62,20 +91,21 @@ $( document ).ready(function() {
     });
     $( ".works" ).click(function() {
         if ($(".works_sup").is(':visible')){
-            $(".works").css({"width": "106px"});
+            $(".works").css({"width": "145px"});
             $(".works_sup").hide("slow");
-            $(".name_header").fadeOut(500);
             $(".name_header").hide("slow");
-            $(".main").show("slow");
+            $(".bloc_catchphrase").hide("slow");
+            $(".catch_phrase").hide("slow");
+            $(".main").fadeIn(1000);
         }
         else{
             $(".works_sup").show("slow");
-            $(".name_header").show("slow");
-            $(".name_header").fadeIn(100000);
-            $(".main").hide("slow");
-            $(".works").css({"width": "auto"});
-            $(".works").css({"margin-right": "5px"});
-
+            $(".name_header").show("slow").shuffleLetters();
+            $(".bloc_catchphrase").show("slow");
+            $(".catch_phrase").show("slow");
+            $(".catch_phrase").shuffleLetters();
+            $(".main").fadeOut(1000);
+            $(".works").css({"width": "auto"}).css({"margin-right": "5px"});
         }
     });
 });
@@ -94,6 +124,7 @@ $(function(){
         $(".name span").css({"border-color" : "black"});
         $(".name_header span").css({"border-color" : "black"});
         $(".name_header").css({"color" : "black"});
+        $(".catch_phrase").css({"color" : "black"});
         $(".contact").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
         $(".about").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
         $(".works").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
@@ -101,12 +132,13 @@ $(function(){
         $(".contact").hover().css({"box-shadow": "7px 7px 0px black"});
         $(".works").hover().css({"box-shadow": "7px 7px 0px black"});
     }
-
 });
 
 
 
+
 /*
+
 (function() {
     document.onmousemove = handleMouseMove;
     function handleMouseMove(event) {
@@ -139,5 +171,4 @@ $(function(){
         $( "body" ).css({"backgroundColor":"rgba("+scaledx+","+scaledy+","+(scaledx+scaledy)/2+",1)"});
     }
 })();
-
 */
