@@ -16,12 +16,14 @@
 
     <title>C  O  N  T  I  N  I</title>
 
+    <link href="style/bootstrap.css" rel="stylesheet">
     <link href="style/index.css" rel="stylesheet" media="screen">
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script type="text/javascript" src="js/interact-1.2.3.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/typed.js"></script>
@@ -30,8 +32,6 @@
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
 
     <script type="text/javascript" src="js/processing.min.js"></script>
-    <!--<canvas data-processing-sources="data/gif_fond_site.pde"></canvas>-->
-
 </head>
 
 <body>
@@ -39,33 +39,71 @@
     <div class="name_header">ALEXANDRE CONTINI</div>
     <div class="bloc_catchphrase"><span class="catch_phrase">Robots lover</span></div>
     <div class="about">
-        ABOUT
+        <span>ABOUT</span>
         <span class="about_sup">
             &nbsp;&nbsp;&nbsp;&nbsp; Paris, 12 FR contact me if you can
         </span>
     </div>
     <div class="contact">
-        CONTACT
+        <span>CONTACT</span>
         <span class="contact_sup">
             &nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.facebook.com/alexcontini" target="_blank">FACEBOOK</a> // contini . alexandre @ gmail . com
         </span>
     </div>
 
     <div >
-        <p class="works">WORKS
+        <div class="works"><span>WORK</span>
 
 
-        <span class="works_sup">
-            oihoihoih
-        </span>
+        <div class="works_sup">
 
-        </p>
+            <div class="project-thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <img class="col-xs-12 no-padding" src="data/img.png">
+                <div>
+                    blabla
+                </div>
+            </div>
+            <div class="project-thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <img class="col-xs-12 no-padding" src="data/img.png">
+                <div>
+                    blabla
+                </div>
+            </div>
+            <div class="project-thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <img class="col-xs-12 no-padding" src="data/img.png">
+                <div>
+                    blabla
+                </div>
+            </div>
+            <div class="project-thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <img class="col-xs-12 no-padding" src="data/img.png">
+                <div>
+                    blabla
+                </div>
+            </div>
+            <div class="project-thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <img class="col-xs-12 no-padding" src="data/img.png">
+                <div>
+                    blabla
+                </div>
+            </div>
+            <div class="project-thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <img class="col-xs-12 no-padding" src="data/img.png">
+                <div>
+                    blabla
+                </div>
+            </div>
+        </div>
+
+        </div>
     </div>
 </header>
 
-<div class="draggable main">
-    <p class="name"><span>ALEXANDRE CONTINI</span></p>
-    <p class="presentation">Robots lover, Graphic aesthete, Creative developer, Light maker,  Generative addict,  Code eater, Cool kid</p>
+<div id="drag-container">
+    <div id="drag" class="draggable main">
+        <p class="name"><span>ALEXANDRE CONTINI</span></p>
+        <p class="presentation"><span>Robots lover</span>, <span>Graphic aesthete</span>, <span>Creative developer</span>, <span>Light maker</span>, <span>Generative addict</span>, <span>Code eater</span>, <span>Cool kid</span></p>
+    </div>
 </div>
 
 </body>

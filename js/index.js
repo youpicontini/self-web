@@ -8,43 +8,19 @@
  */
 
 
-
-// target elements with the "draggable" class
-interact('.draggable')
-    .draggable({
-        // enable inertial throwing
-        inertia: true
-        // keep the element within the area of it's parent
-        ,
-
-        // call this function on every dragmove event
-        onmove: function (event) {
-            var target = event.target,
-            // keep the dragged position in the data-x/data-y attributes
-                x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-                y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-            // translate the element
-            target.style.webkitTransform =
-                target.style.transform =
-                    'translate(' + x + 'px, ' + y + 'px)';
-
-            // update the posiion attributes
-            target.setAttribute('data-x', x);
-            target.setAttribute('data-y', y);
-        }
-
-    });
-
 $( document ).ready(function() {
     window.setInterval(function(){
         var rand = Math.floor((Math.random() * 7) + 1);
         switch(rand) {
             case 1:
                 $(".catch_phrase").text("Robots lover");
+                $('.canvas_curve_lines').css('display','none');
+                $('.canvas_circle_lines').css('display','block');
                 break;
             case 2:
                 $(".catch_phrase").text("Graphic aesthete");
+                $('.canvas_circle_lines').css('display','none');
+                $('.canvas_curve_lines').css('display','block');
                 break;
             case 3:
                 $(".catch_phrase").text("Creative developer");
@@ -92,50 +68,89 @@ $( document ).ready(function() {
     $( ".works" ).click(function() {
         if ($(".works_sup").is(':visible')){
             $(".works").css({"width": "145px"});
-            $(".works_sup").hide("slow");
+            $(".works_sup").hide();
+            $(".project-thumbnail").hide();
             $(".name_header").hide("slow");
             $(".bloc_catchphrase").hide("slow");
-            $(".catch_phrase").hide("slow");
             $(".main").fadeIn(1000);
+
         }
         else{
-            $(".works_sup").show("slow");
+            $(".works_sup").show();
+            $(".project-thumbnail").each(function(index) {
+                $(this).delay(300*index).fadeIn(300);
+            });
             $(".name_header").show("slow").shuffleLetters();
             $(".bloc_catchphrase").show("slow");
-            $(".catch_phrase").show("slow");
             $(".catch_phrase").shuffleLetters();
-            $(".main").fadeOut(1000);
+            $(".main").fadeOut(300);
             $(".works").css({"width": "auto"}).css({"margin-right": "5px"});
         }
     });
-});
 
+    var draggable = $('#drag-container').html();
 
-$(function(){
-
-    // container is the DOM element;
-    // userText is the textbox
-
-    $(".presentation").shuffleLetters();
-    var rand = Math.floor(Math.random()*2);
-    if(rand % 2 == 0){
-        $("body").css({"background" : "white"});
-        $(".main").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
-        $(".name span").css({"border-color" : "black"});
-        $(".name_header span").css({"border-color" : "black"});
-        $(".name_header").css({"color" : "black"});
-        $(".catch_phrase").css({"color" : "black"});
-        $(".contact").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
-        $(".about").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
-        $(".works").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
-        $(".about").hover().css({"box-shadow": "7px 7px 0px black"});
-        $(".contact").hover().css({"box-shadow": "7px 7px 0px black"});
-        $(".works").hover().css({"box-shadow": "7px 7px 0px black"});
+    for (var i=0; i < 5; i++) {
+        $('#drag-container').append(draggable);
+        $('.draggable:last').attr('id', '').css('z-index', -1-i);
     }
+
+    //$('.draggable:first').attr('id', 'drag').css('z-index', 10);
+
+    interact('#drag')
+        .draggable({
+            // enable inertial throwing
+            inertia: false,
+            // keep the element within the area of it's parent
+            restrict: {
+                restriction: 'body'
+            }
+            ,
+            // call this function on every dragmove event
+            onmove: function (event) {
+                var x, y;
+                $.each($('.draggable'), function(index, element) {
+                    setTimeout(function() {
+                        if (index == 0) {
+                            // keep the dragged position in the data-x/data-y attributes
+                            x = (parseFloat(element.getAttribute('data-x')) || 0) + event.dx,
+                            y = (parseFloat(element.getAttribute('data-y')) || 0) + event.dy;
+                        }
+
+                        // translate the element
+                        element.style.webkitTransform =
+                            element.style.transform =
+                                'translate(' + x + 'px, ' + y + 'px)';
+
+                        // update the posiion attributes
+                        element.setAttribute('data-x', x);
+                        element.setAttribute('data-y', y);
+                    }, index*50);
+                });
+            }
+        });
+
+
+    $(function(){
+        $(".presentation>span").shuffleLetters();
+        var rand = Math.floor(Math.random()*2);
+        if(rand % 2 == 0){
+            $("body").css({"background" : "white"});
+            $(".main").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"}).css({"background-color":"white"});
+            $(".name span").css({"border-color" : "black"});
+            $(".name_header span").css({"border-color" : "black"});
+            $(".name_header").css({"color" : "black"});
+            $(".catch_phrase").css({"color" : "black"});
+            $(".contact").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
+            $(".about").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
+            $(".works").css({"border-color" : "black"}).css({"color" : "black"}).css({"box-shadow": "5px 5px 0px black"});
+            $(".about").hover().css({"box-shadow": "7px 7px 0px black"});
+            $(".contact").hover().css({"box-shadow": "7px 7px 0px black"});
+            $(".works").hover().css({"box-shadow": "7px 7px 0px black"});
+            $(".canvas_curve_lines").css({"display": "block"});
+        }
+    });
 });
-
-
-
 
 /*
 
