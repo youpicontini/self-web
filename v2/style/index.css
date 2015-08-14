@@ -1,0 +1,72 @@
+/*
+     __ ______  _   _____________   ______
+    / //_/ __ \/ | / /_  __/  _/ | / /  _/
+   / ,< / / / /  |/ / / /  / //  |/ // /
+  / /| / /_/ / /|  / / / _/ // /|  // /
+ /_/ |_\____/_/ |_/ /_/ /___/_/ |_/___/
+                                 paris
+ */
+
+
+html{
+    height: 100%;
+}
+@font-face {
+    font-family: anka;
+    src: url(../font/AnkaCoder-r.ttf);
+    font-style: normal;
+}
+body{
+    margin: 0;
+    background: black;
+    color: white;
+    font-size:10px;
+    padding: 10px;
+    min-height: 100%;
+    font-family: 'anka' ;
+}
+
+.no-padding{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.logo , .logo2{
+    font-size:70px;
+    line-height: 60px;
+    letter-spacing: -2px;
+    font-family: Arial Black;
+    position:fixed
+}
+
+.details{
+    top: 130px;
+    left:29px;
+    position:fixed;
+}
+
+.details a{
+    color: white;
+    font-size: 15px;
+    border-bottom: 1px dotted white;
+}
+.details a:active,.details a:hover ,.details a:focus {
+    text-decoration: none
+}
+
+.logo2{
+    top:70px;
+}
+
+.projects{
+    margin-top: 125px;
+}
+
+.project-thumbnail{
+    margin-bottom: 80px;
+}
+
+canvas{
+    position: absolute;
+    margin: auto;
+}

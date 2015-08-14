@@ -12,10 +12,11 @@
     font-family: inconsolata;
     src: url(../font/Inconsolata.otf);
 }
-
+html{
+    height: 100%;
+}
 
 body{
-
     margin: 0;
     background: black;
     font-family: 'Droid Sans Mono' ;
@@ -23,26 +24,31 @@ body{
     padding: 10px;
     /*background-image: url(../data/giphy.gif);*/
 
+    min-height: 100%;
+
 }
 
-.draggable{
 
+
+
+.draggable{
     position: absolute;
     -webkit-transform: translate(0px, 0px);
     text-align: center;
 }
 
 .main {
-    width:400px;
+    width:408px;
+    height:162px;
     left:50%;
-    margin-left: -215px;
+    margin-left: -204px;
     top:50%;
-    height:150px;
-    margin-top: -88px;
+    margin-top: -81px;
     padding:15px;
     color: white;
     border: 1px dotted white;
     box-shadow: 5px 5px 0px white;
+    background-color: black;
 }
 /*CONTACT*/
 
@@ -59,7 +65,7 @@ body{
 }
 
 .contact, .about{
-    min-width: 55px;
+    min-width: 67px;
 }
 .contact{
     margin-left: 5px;
@@ -69,31 +75,32 @@ body{
     display: block;
     margin-top: 10px;
     width: 145px;
+    transition: 1s;
 }
 
 .works_sup{
     display: none;
-    height: 100%;
     width: 100%;
+    overflow: auto;
+    margin-top: 30px;
 }
 
-.contact_sup{
+.contact_sup, .about_sup{
     display: none;
+    height: 0px;
 }
 
 .contact a:visited{color:inherit}
 
-
-.about_sup{
-    display: none;
-}
-
+/*
 .about:hover, .works:hover, .contact:hover{
 
     box-shadow: 7px 7px 0px white;
     -webkit-transform: translate(-2px, -2px);
     -webkit-transition: 0.3s;-moz-transition: 0.3s;-ms-transition: 0.3s;-o-transition: 0.3s;transition: 0.3s;
 }
+
+*/
 
 .draggable>p{
     opacity: 1;
@@ -102,12 +109,13 @@ body{
 
 canvas{
     position: absolute;
-    width: 600px;
+    width: 408px;
     left:50%;
-    margin-left: -300px;
+    margin-left: -204px;
     top:50%;
-    margin-top: -300px;
+    margin-top: -81px;
 }
+.canvas_curve_lines_black{display: block}
 
 .name_header{
     display: none;
@@ -122,14 +130,13 @@ canvas{
 }
 
 .catch_phrase{
-    display: none;
     margin-top: -6px;
     margin-bottom: 20px;
     color: white;
 }
 
 .bloc_catchphrase{
-    min-height: 36px;
+    height: 36px;
     display: none;
 }
 
@@ -140,8 +147,19 @@ canvas{
 
 .presentation{
     margin-top: 40px;
+    text-align: justify;
 }
 
 .typed-cursor{
     opacity: 0;
+}
+
+.no-padding{
+    padding-left:0!important;
+    padding-right:0!important;
+}
+
+.project-thumbnail{
+    margin-top: 10px;
+    display: none;
 }
