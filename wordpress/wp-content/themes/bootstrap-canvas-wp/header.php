@@ -31,21 +31,21 @@
 	   */
 	  wp_head(); 
     ?>
-  <link href="style/bootstrap.css" rel="stylesheet">
-  <link href="style/index.css" rel="stylesheet" media="screen">
+  <link href="/style/bootstrap.css" rel="stylesheet">
+  <link href="/style/index.css" rel="stylesheet" media="screen">
+  <link href="http://fr.allfont.net/allfont.css?fonts=arial-black" rel="stylesheet" type="text/css" />
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="<?php echo get_option('home'); ?>/favicon.ico">
   </head>
   <body <?php body_class(); ?>>
 
   <header class="col-xs-12">
       <a href="<?php echo home_url(); ?>" class="page-fadeOut">
           <div class="logo">
-              TO
+              KO
           </div>
           <div class="logo2">
-              NK.
+              NT.
           </div>
       </a>
       <div class="details col-xs-2 no-padding hidden-xs hidden-sm">

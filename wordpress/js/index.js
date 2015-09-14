@@ -9,7 +9,7 @@
 
 
 $( document ).ready(function() {
-    $('.logo, .logo2').shuffleLetters();
+    $('.logo, .logo2, title').shuffleLetters();
     $("body>div").delay(500).fadeIn(500);
     $( "#infos-xs" ).click(function() {
         $("body>div").delay(500).fadeIn(500);
